@@ -20,14 +20,15 @@ const initialState = [
 ];
 
 const TodoListBasicTailWindCss = () => {
-  const [taks, setTaks] = useState(initialState);
+  const [tasks, setTaks] = useState(initialState);
   const [newTask, setNewTask] = useState("");
+  //const [changedTask, setChangedTask] = useState("");
 
-  //   function handleChangeTask(e) {
-  //     e.preventDefault();
-  //     const value = e.target.value;
+  // function handleChangeTask(taskId) {
+  //   e.preventDefault();
+  //     setChangedTask(tasks.filter((task) => task.id === taskId).title);
   //     setNewTask(value);
-  //   }
+  // }
 
   function handleAddTask() {
     if (newTask === ""){
@@ -36,29 +37,31 @@ const TodoListBasicTailWindCss = () => {
     }
 
     const objTask = {
-      id: generateId,
+      id: generateId(),
       title: newTask,
       completed: false,
     }
-    // console.log(objTask);
+
+   // console.log(objTask);
     setTaks(()=> ([
-      ...taks,
+      ...tasks,
       objTask]
     ))
     // console.log(setTaks);
   }
 
   function handleCompleted(taskId) {
-    const updateTask = taks.map((task) =>
+    const updateTask = tasks.map((task) =>
     task.id === taskId ? { ...task, completed: !task.completed } : task
   );
 
   setTaks(updateTask);
   }
 
-  function handleremoveTask(taskId) {
-    const updatedTasks = taks.filter((task) => task.id !== taskId);
+  function handleRemoveTask(taskId) {
+    const updatedTasks = tasks.filter((task) => task.id !== taskId);
     setTaks(updatedTasks);
+    console.log(updatedTasks);
   }
 
   return (
@@ -81,7 +84,7 @@ const TodoListBasicTailWindCss = () => {
           </button>
         </div>
         <ul>
-          {taks.map((task) => (
+          {tasks.map((task) => (
             <li key={task.id} className="flex items-center mb2">
               <input
                 type="checkbox"
@@ -96,9 +99,15 @@ const TodoListBasicTailWindCss = () => {
               </span>
               <button
                 className=" ml-auto bg-red-500 text-white px-3 py-1 rounded-md mb-2"
-                onClick={() => handleremoveTask(task.id)}
+                onClick={() => handleRemoveTask(task.id)}
               >
                 Borrar Tarea
+              </button>
+              <button
+                className=" ml-auto bg-red-500 text-white px-3 py-1 rounded-md mb-2"
+                onClick={() => handleChangeTask(task.id)}
+              >
+                Cambiar tarea
               </button>
             </li>
           ))}

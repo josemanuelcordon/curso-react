@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const initialState = ["manzana", "platano", "fresa", "arandano"];
 
-//TODO no me convence el uso de useState aqui
+//TODO no me convence el uso de useState aqui para el formulario, preguntar a Isaias
 const Buscador = () => {
   const [searchForm, setSearchForm] = useState("");
   const [filteredItems, setFilteredItems] = useState(initialState);
