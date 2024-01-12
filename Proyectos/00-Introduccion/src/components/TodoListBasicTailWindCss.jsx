@@ -103,12 +103,12 @@ const TodoListBasicTailWindCss = () => {
               >
                 Borrar Tarea
               </button>
-              <button
+              {/* <button
                 className=" ml-auto bg-red-500 text-white px-3 py-1 rounded-md mb-2"
                 onClick={() => handleChangeTask(task.id)}
               >
                 Cambiar tarea
-              </button>
+              </button> */}
             </li>
           ))}
         </ul>
