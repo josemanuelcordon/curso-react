@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { generateId } from "../helpers/generateId";
+import Task from "./Task.jsx";
 
 const initialState = [
   {
@@ -84,7 +85,7 @@ const TodoListBasicTailWindCss = () => {
 
   return (
     <>
-      <div className="max-w-md mx-auto mt-8 p-6 bg-slate-300 shadow-md rounded-md">
+      <div className="max-w mx-auto mt-8 p-6 bg-slate-300 shadow-md rounded-md">
         <h1 className="text-2xl mb-4 font-bold">Lista de Tareas</h1>
         <div className="flex mb-4">
           <input
@@ -103,33 +104,7 @@ const TodoListBasicTailWindCss = () => {
         </div>
         <ul>
           {tasks.map((task) => (
-            <li key={task.id} className="flex items-center mb2">
-              <input
-                type="checkbox"
-                checked={task.completed}
-                className="mr-4"
-                onChange={() => handleCompleted(task.id)}
-              />
-              <span
-                style={{
-                  textDecoration: task.completed ? "line-through" : "none",
-                }}
-              >
-                {task.title}
-              </span>
-              <button
-                className="ml-auto bg-red-500 text-white px-3 py-1 rounded-md mb-2"
-                onClick={() => handleRemoveTask(task.id)}
-              >
-                Borrar Tarea
-              </button>
-              <button
-                className="ml-auto bg-yellow-500 text-white px-3 py-1 rounded-md mb-2"
-                onClick={() => handleEditTask(task.id)}
-              >
-                Editar Tarea
-              </button>
-            </li>
+            <Task key={task.id} task={task} handleCompleted={handleCompleted} handleRemoveTask={handleRemoveTask} handleEditTask={handleEditTask} />
           ))}
         </ul>
         {/* Mostrar el input solo si estamos editando una tarea */}
