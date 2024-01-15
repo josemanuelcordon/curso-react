@@ -50,7 +50,8 @@ const TodoListBasicTailWindCss = () => {
       setTasks((prevTasks) => [...prevTasks, objTask]);
     }
 
-    setNewTask("");
+    setNewTask((previous) => "");
+    console.log(newTask);
   }
 
   function handleCompleted(taskId) {
