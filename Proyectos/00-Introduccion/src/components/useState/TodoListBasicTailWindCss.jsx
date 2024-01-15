@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { generateId } from "../helpers/generateId";
+import { generateId } from "../../helpers/generateId.js";
 import Task from "./Task.jsx";
 
 const initialState = [

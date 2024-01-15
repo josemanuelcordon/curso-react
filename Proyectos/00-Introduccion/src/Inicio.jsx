@@ -1,8 +1,8 @@
 import "./Inicio.css";
-import Buscador from "./components/Buscador";
-import Contador from "./components/Contador";
-import RegistrarFormulario from "./components/RegistrarFormulario";
-import TodoListBasicTailWindCss  from "./components/TodoListBasicTailWindCss.jsx";
+import Buscador from "./components/useState/Buscador.jsx";
+import Contador from "./components/useState/Contador.jsx";
+import RegistrarFormulario from "./components/useState/RegistrarFormulario.jsx";
+import TodoListBasicTailWindCss  from "./components/useState/TodoListBasicTailWindCss.jsx";
 
 const Inicio = () => {
   return (
