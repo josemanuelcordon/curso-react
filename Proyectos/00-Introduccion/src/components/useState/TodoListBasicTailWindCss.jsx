@@ -20,11 +20,6 @@ const initialState = [
   },
 ];
 
-
-// ... (código anterior)
-
-// ... (código anterior)
-
 const TodoListBasicTailWindCss = () => {
   const [tasks, setTasks] = useState(initialState);
   const [newTask, setNewTask] = useState("");
