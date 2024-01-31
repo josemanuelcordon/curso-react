@@ -7,8 +7,10 @@ const BackButton = () => {
         navigate(-1);
     }
   return (
-    <button className="bg-gray-800 text-white py-2 px-4"
-    onClick={handleClickBack}>Volver</button>
+    <div>
+      <button className="bg-gray-800 text-white py-2 px-4"
+      onClick={handleClickBack}>Volver</button>
+    </div>
   )
 }
 
