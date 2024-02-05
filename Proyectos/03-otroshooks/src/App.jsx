@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import EjemploUserRef from './components/useRef/EjemploUserRef'
-import EjemploUseRef2 from './components/useRef/EjemploUseRef2'
-import EjemploUseRef3 from './components/useRef/EjemploUseRef3'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import EjemploUserRef from "./components/useRef/EjemploUserRef";
+import EjemploUseRef2 from "./components/useRef/EjemploUseRef2";
+import EjemploUseRef3 from "./components/useRef/EjemploUseRef3";
+import AppContext from "./components/ejemploContext/AppContext";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -24,13 +25,16 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        </div><hr/>
-        <h2>Uso de userRef</h2>
-        <EjemploUserRef/>
+      </div>
+      <hr />
+      <h2>Uso de userRef</h2>
+      {/* <EjemploUserRef/>
         <EjemploUseRef2/>
-        <EjemploUseRef3/>
+        <EjemploUseRef3/> */}
+      <hr />
+      <AppContext />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
